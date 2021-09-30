@@ -26,6 +26,7 @@ public class UsuarioModel {
 	@NotNull
 	private String nomeCompleto;
 
+	@NotNull
 	@Email
 	private String email;
 
