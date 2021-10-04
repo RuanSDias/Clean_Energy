@@ -6,7 +6,7 @@
 	🚧 Em construção...  🚧
 </h4>
 <h3  align="center">Projeto Integrador Generation Brasil </h3>
-<p align="center"> Nosso projeto é relacionado ao Objetivos de Desenvolvimento Sustentáveis 7 da ONU: </p>
+<p align="center"> Nosso projeto é relacionado ao Objetivo de Desenvolvimento Sustentável 7 da ONU: </p>
 
 <div align="center">
   <a href="https://brasil.un.org/pt-br/sdgs/7">
