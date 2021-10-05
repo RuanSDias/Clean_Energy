@@ -1,9 +1,15 @@
 package br.com.project.cleanEnergy.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
  * Classe espelho da tabela categoria no banco db_clean_energy.
@@ -26,6 +32,26 @@ public class CategoriaModel {
 	private String material;
 
 	private String potencia;
+	
+	@OneToMany (mappedBy = "categoria", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties ("categoria")
+	private List<ProdutoModel> produtos; 
+
+	public long getIdCategoria() {
+		return idCategoria;
+	}
+
+	public void setIdCategoria(long idCategoria) {
+		this.idCategoria = idCategoria;
+	}
+
+	public List<ProdutoModel> getProdutos() {
+		return produtos;
+	}
+
+	public void setProdutos(List<ProdutoModel> produtos) {
+		this.produtos = produtos;
+	}
 
 	// Getter and setters
 	public long getId() {
