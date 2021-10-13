@@ -60,7 +60,7 @@ public class UsuarioController {
 
 	}
 	
-	@PutMapping("/logar")
+	@PostMapping("/logar")
 	public ResponseEntity<CredenciaisDTO> credenciais(@Valid @RequestBody UsuarioLoginDTO usuarioParaAutenticar) {
 		return servicos.pegarCredenciais(usuarioParaAutenticar);
 	}
