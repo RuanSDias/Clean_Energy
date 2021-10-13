@@ -1,12 +1,17 @@
 package br.com.project.cleanEnergy.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 
 /**
@@ -30,10 +35,12 @@ public class UsuarioModel {
 	@Email
 	private String email;
 	
+	@OneToMany (mappedBy = "usuario", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties ("usuario")
+	private List<ProdutoModel> produtos;
 	
 
 	public UsuarioModel(long idUsuario, String nomeCompleto, String email, String senha) {
-		super();
 		this.idUsuario = idUsuario;
 		this.nomeCompleto = nomeCompleto;
 		this.email = email;
@@ -84,6 +91,14 @@ public class UsuarioModel {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public List<ProdutoModel> getProdutos() {
+		return produtos;
+	}
+
+	public void setProdutos(List<ProdutoModel> produtos) {
+		this.produtos = produtos;
 	}
 	
 	
