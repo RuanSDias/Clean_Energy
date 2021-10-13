@@ -42,7 +42,7 @@ public class UsuarioModel {
 
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
-	private List<ProdutoModel> produtos;
+	private List<ProdutoModel> produtosUsuarios;
 
 	public UsuarioModel(long idUsuario, String nomeCompleto, String email, String senha) {
 		this.idUsuario = idUsuario;
@@ -93,12 +93,14 @@ public class UsuarioModel {
 		this.senha = senha;
 	}
 
-	public List<ProdutoModel> getProdutos() {
-		return produtos;
+	public List<ProdutoModel> getProdutosUsuario() {
+		return produtosUsuarios;
 	}
 
-	public void setProdutos(List<ProdutoModel> produtos) {
-		this.produtos = produtos;
+	public void setProdutosUsuario(List<ProdutoModel> produtosUsuario) {
+		this.produtosUsuarios = produtosUsuario;
 	}
+
+	
 
 }

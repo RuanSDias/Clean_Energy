@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -38,11 +39,13 @@ public class ProdutoModel {
 	private String imagem;
 	
 	@ManyToOne
-	@JsonIgnoreProperties ("produtos")
+	@JoinColumn(name="categoria_idCategoria", nullable=false)
+	@JsonIgnoreProperties ("produtosCategoria")
 	private CategoriaModel categoria;
 	
 	@ManyToOne
-	@JsonIgnoreProperties("produtos")
+	@JoinColumn(name="usuario_idUsuario", nullable=false)
+	@JsonIgnoreProperties("produtosUsuarios")
 	private UsuarioModel usuario;
 
 	public CategoriaModel getCategoria() {
