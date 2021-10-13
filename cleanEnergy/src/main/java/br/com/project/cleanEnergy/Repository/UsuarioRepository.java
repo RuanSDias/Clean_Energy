@@ -13,6 +13,6 @@ public interface UsuarioRepository extends JpaRepository<UsuarioModel, Long> {
 	
 	public Optional<UsuarioModel> findByEmail (String email);
 	
-	public List<UsuarioModel> findAllByNomeContainingIgoneCase (String nome);
+	public List<UsuarioModel> findAllByNomeCompletoContainingIgnoreCase (String nomeCompleto);
 
 }
