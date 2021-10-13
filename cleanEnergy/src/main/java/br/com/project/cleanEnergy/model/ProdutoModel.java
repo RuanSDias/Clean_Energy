@@ -1,4 +1,4 @@
-package br.com.project.cleanEnergy.model;
+	package br.com.project.cleanEnergy.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -40,6 +40,10 @@ public class ProdutoModel {
 	@ManyToOne
 	@JsonIgnoreProperties ("produtos")
 	private CategoriaModel categoria;
+	
+	@ManyToOne
+	@JsonIgnoreProperties("produtos")
+	private UsuarioModel usuario;
 
 	public CategoriaModel getCategoria() {
 		return categoria;
@@ -87,6 +91,14 @@ public class ProdutoModel {
 
 	public void setImagem(String imagem) {
 		this.imagem = imagem;
+	}
+
+	public UsuarioModel getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(UsuarioModel usuario) {
+		this.usuario = usuario;
 	}
 	
 	
