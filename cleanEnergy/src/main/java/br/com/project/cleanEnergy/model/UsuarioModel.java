@@ -25,7 +25,7 @@ import com.sun.istack.NotNull;
 public class UsuarioModel {
 
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idUsuario;
 
 	@NotNull
@@ -34,11 +34,14 @@ public class UsuarioModel {
 	@NotNull
 	@Email
 	private String email;
-	
-	@OneToMany (mappedBy = "usuario", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties ("usuario")
+
+	@NotNull
+	@Size(min = 5, max = 8)
+	private String senha;
+
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("usuario")
 	private List<ProdutoModel> produtos;
-	
 
 	public UsuarioModel(long idUsuario, String nomeCompleto, String email, String senha) {
 		this.idUsuario = idUsuario;
@@ -52,14 +55,10 @@ public class UsuarioModel {
 		this.email = email;
 		this.senha = senha;
 	}
-	
-	public UsuarioModel () {
-		
-	}
 
-	@NotNull
-	@Size(min = 5, max = 8)
-	private String senha;
+	public UsuarioModel() {
+
+	}
 
 	public long getIdUsuario() {
 		return idUsuario;
@@ -100,6 +99,5 @@ public class UsuarioModel {
 	public void setProdutos(List<ProdutoModel> produtos) {
 		this.produtos = produtos;
 	}
-	
-	
+
 }
