@@ -29,6 +29,26 @@ public class UsuarioModel {
 	@NotNull
 	@Email
 	private String email;
+	
+	
+
+	public UsuarioModel(long idUsuario, String nomeCompleto, String email, String senha) {
+		super();
+		this.idUsuario = idUsuario;
+		this.nomeCompleto = nomeCompleto;
+		this.email = email;
+		this.senha = senha;
+	}
+
+	public UsuarioModel(String nomeCompleto, String email, String senha) {
+		this.nomeCompleto = nomeCompleto;
+		this.email = email;
+		this.senha = senha;
+	}
+	
+	public UsuarioModel () {
+		
+	}
 
 	@NotNull
 	@Size(min = 5, max = 8)
