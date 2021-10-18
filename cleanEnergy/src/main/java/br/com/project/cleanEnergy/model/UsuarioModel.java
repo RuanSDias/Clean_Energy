@@ -10,10 +10,12 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.sun.istack.NotNull;
+
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * Classe espelho da tabela usuario no banco db_clean_energy.
@@ -22,7 +24,7 @@ import com.sun.istack.NotNull;
  * @since 1.0
  *
  */
-@Entity(name = "tbUsuario")
+@Entity(name = "tb_Usuario")
 public class UsuarioModel {
 
 	@Id
@@ -32,6 +34,7 @@ public class UsuarioModel {
 	@NotNull
 	private String nomeCompleto;
 
+	// @ApiModelProperty(example = "email@email.com.br")
 	@NotNull
 	@Email
 	private String email;
@@ -40,7 +43,7 @@ public class UsuarioModel {
 	@Size(min = 5, max = 100)
 	private String senha;
 
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 	private List<ProdutoModel> produtosUsuarios;
 
@@ -93,14 +96,12 @@ public class UsuarioModel {
 		this.senha = senha;
 	}
 
-	public List<ProdutoModel> getProdutosUsuario() {
+	public List<ProdutoModel> getProdutosUsuarios() {
 		return produtosUsuarios;
 	}
 
-	public void setProdutosUsuario(List<ProdutoModel> produtosUsuario) {
-		this.produtosUsuarios = produtosUsuario;
+	public void setProdutosUsuarios(List<ProdutoModel> produtosUsuarios) {
+		this.produtosUsuarios = produtosUsuarios;
 	}
-
-	
 
 }
