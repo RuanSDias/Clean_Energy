@@ -32,10 +32,10 @@ public class CategoriaModel {
 	private String material;
 
 	private String potencia;
-	
-	@OneToMany (mappedBy = "categoria", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties ("categoria")
-	private List<ProdutoModel> produtosCategoria; 
+
+	@OneToMany(mappedBy = "categoria", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties("categoria")
+	private List<ProdutoModel> produtosCategoria;
 
 	public long getIdCategoria() {
 		return idCategoria;
@@ -45,21 +45,12 @@ public class CategoriaModel {
 		this.idCategoria = idCategoria;
 	}
 
-	public List<ProdutoModel> getProdutos() {
-		return produtosCategoria;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setProdutos(List<ProdutoModel> produtos) {
-		this.produtosCategoria = produtos;
-	}
-
-	// Getter and setters
-	public long getId() {
-		return idCategoria;
-	}
-
-	public void setId(long id) {
-		this.idCategoria = id;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getMaterial() {
@@ -78,12 +69,12 @@ public class CategoriaModel {
 		this.potencia = potencia;
 	}
 
-	public String getNome() {
-		return nome;
+	public List<ProdutoModel> getProdutosCategoria() {
+		return produtosCategoria;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setProdutosCategoria(List<ProdutoModel> produtosCategoria) {
+		this.produtosCategoria = produtosCategoria;
 	}
 
 }

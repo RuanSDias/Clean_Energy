@@ -1,4 +1,4 @@
-	package br.com.project.cleanEnergy.model;
+package br.com.project.cleanEnergy.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,43 +18,35 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  * @since 1.0
  *
  */
-@Entity(name = "tbProduto")
+@Entity(name = "tb_Produto")
 public class ProdutoModel {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idProduto;
-	
+
 	@NotNull
 	@Size(min = 1, max = 100)
 	private String nome;
-	
+
 	@NotNull
 	private double preco;
-	
+
 	@NotNull
 	private int quantidade;
-	
+
 	@NotNull
 	private String imagem;
-	
+
 	@ManyToOne
-	@JoinColumn(name="categoria_idCategoria", nullable=false)
-	@JsonIgnoreProperties ("produtosCategoria")
+	@JoinColumn(name = "fk_categoria", nullable = false)
+	@JsonIgnoreProperties("produtosCategoria")
 	private CategoriaModel categoria;
-	
+
 	@ManyToOne
-	@JoinColumn(name="usuario_idUsuario", nullable=false)
+	@JoinColumn(name = "fk_usuario", nullable = false)
 	@JsonIgnoreProperties("produtosUsuarios")
 	private UsuarioModel usuario;
-
-	public CategoriaModel getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(CategoriaModel categoria) {
-		this.categoria = categoria;
-	}
 
 	public long getIdProduto() {
 		return idProduto;
@@ -96,6 +88,14 @@ public class ProdutoModel {
 		this.imagem = imagem;
 	}
 
+	public CategoriaModel getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(CategoriaModel categoria) {
+		this.categoria = categoria;
+	}
+
 	public UsuarioModel getUsuario() {
 		return usuario;
 	}
@@ -103,7 +103,5 @@ public class ProdutoModel {
 	public void setUsuario(UsuarioModel usuario) {
 		this.usuario = usuario;
 	}
-	
-	
-	
+
 }
