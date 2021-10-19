@@ -36,7 +36,7 @@ public class SwaggerConfig {
 	}
 
 	private static Contact contact() {
-		return new Contact("Grupo 4 - Clean Energy", "https://github.com/RuanSDias/Clean_Energy", "null");
+		return new Contact("Clean Energy - Squad 4", "https://github.com/RuanSDias/Clean_Energy", "null");
 	}
 
 	private static List<Response> responseMessage() {
