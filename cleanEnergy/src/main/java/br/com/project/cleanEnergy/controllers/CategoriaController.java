@@ -88,13 +88,4 @@ public class CategoriaController {
 		
 	}
 
-
-
-
-
-
-
-
-
-
 }
