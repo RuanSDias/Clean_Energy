@@ -8,8 +8,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import br.com.project.cleanEnergy.Repository.UsuarioRepository;
 import br.com.project.cleanEnergy.model.UsuarioModel;
+import br.com.project.cleanEnergy.repository.UsuarioRepository;
 
 
 @Service

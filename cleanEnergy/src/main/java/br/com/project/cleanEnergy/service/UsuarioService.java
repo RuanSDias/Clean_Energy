@@ -11,10 +11,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import br.com.project.cleanEnergy.Repository.UsuarioRepository;
 import br.com.project.cleanEnergy.model.UsuarioModel;
 import br.com.project.cleanEnergy.model.dtos.CredenciaisDTO;
 import br.com.project.cleanEnergy.model.dtos.UsuarioLoginDTO;
+import br.com.project.cleanEnergy.repository.UsuarioRepository;
 
 @Service
 public class UsuarioService {

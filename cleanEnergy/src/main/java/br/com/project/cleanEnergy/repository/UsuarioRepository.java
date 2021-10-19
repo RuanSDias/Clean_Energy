@@ -1,4 +1,4 @@
-package br.com.project.cleanEnergy.Repository;
+package br.com.project.cleanEnergy.repository;
 
 import java.util.List;
 import java.util.Optional;
