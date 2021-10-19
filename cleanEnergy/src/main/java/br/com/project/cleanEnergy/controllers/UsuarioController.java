@@ -18,11 +18,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.project.cleanEnergy.Repository.UsuarioRepository;
 import br.com.project.cleanEnergy.model.ProdutoModel;
 import br.com.project.cleanEnergy.model.UsuarioModel;
 import br.com.project.cleanEnergy.model.dtos.CredenciaisDTO;
 import br.com.project.cleanEnergy.model.dtos.UsuarioLoginDTO;
+import br.com.project.cleanEnergy.repository.UsuarioRepository;
 import br.com.project.cleanEnergy.service.UsuarioService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
