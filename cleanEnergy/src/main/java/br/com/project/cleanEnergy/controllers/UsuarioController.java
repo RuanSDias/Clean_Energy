@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.project.cleanEnergy.Repository.UsuarioRepository;
+import br.com.project.cleanEnergy.model.ProdutoModel;
 import br.com.project.cleanEnergy.model.UsuarioModel;
 import br.com.project.cleanEnergy.model.dtos.CredenciaisDTO;
 import br.com.project.cleanEnergy.model.dtos.UsuarioLoginDTO;
@@ -58,6 +59,15 @@ public class UsuarioController {
 		return repository.findById(idUsuario).map(resp -> ResponseEntity.status(200).body(resp))
 				.orElse(ResponseEntity.status(400).build());
 
+	}
+	
+	@ApiOperation(value = "Busca usuário por nome")
+	@ApiResponses(value = {
+	@ApiResponse(code = 200, message = "Retorna usuário existente ou inexistente"),
+	@ApiResponse(code = 204, message = "Retorno inexistente")})
+	@GetMapping("/nome/{nome}")
+	public ResponseEntity<List<UsuarioModel>> pegarPorNome (@PathVariable String nomeCompleto){
+		return ResponseEntity.ok(repository.findAllByNomeCompletoContainingIgnoreCase(nomeCompleto));
 	}
 	
 	@ApiOperation(value = "Salva novo usuário no sistema")
