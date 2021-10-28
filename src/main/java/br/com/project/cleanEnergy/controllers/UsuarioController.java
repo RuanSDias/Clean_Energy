@@ -68,8 +68,8 @@ public class UsuarioController {
 	@ApiResponse(code = 200, message = "Retorna usuário existente ou inexistente"),
 	@ApiResponse(code = 204, message = "Retorno inexistente")})
 	@GetMapping("/nome/{nome}")
-	public ResponseEntity<List<UsuarioModel>> pegarPorNome (@PathVariable String nomeCompleto){
-		return ResponseEntity.ok(repository.findAllByNomeCompletoContainingIgnoreCase(nomeCompleto));
+	public ResponseEntity<List<UsuarioModel>> pegarPorNome (@PathVariable String nome){
+		return ResponseEntity.ok(repository.findAllByNomeCompletoContainingIgnoreCase(nome));
 	}
 	
 	@ApiOperation(value = "Salva novo usuário no sistema")
