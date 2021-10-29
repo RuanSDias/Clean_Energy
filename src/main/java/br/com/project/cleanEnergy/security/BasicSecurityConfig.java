@@ -25,21 +25,7 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 
 	@Override
-
-	protected void configure (HttpSecurity http) throws Exception {
-		http.authorizeRequests()
-		.antMatchers(HttpMethod.POST, "/api/v1/usuario/salvar").permitAll()
-		.antMatchers(HttpMethod.POST, "/api/v1/usuario/logar").permitAll()
-		.antMatchers(HttpMethod.GET, "/api/v1/usuario").permitAll()
-		.antMatchers(HttpMethod.GET, "/produtos").permitAll()
-		.anyRequest().authenticated()
-		.and().httpBasic()
-		.and().sessionManagement()
-		.and().cors()
-		.and().csrf().disable();
-
 	protected void configure(HttpSecurity http) throws Exception {
-<<<<<<< HEAD
 		http.authorizeRequests()
 				.antMatchers(HttpMethod.POST, "/api/v1/usuario/salvar").permitAll()
 				.antMatchers(HttpMethod.POST, "/api/v1/usuario/logar").permitAll()
@@ -50,19 +36,6 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 			.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 			.and().cors()
 			.and().csrf().disable();
-=======
-	http.authorizeRequests()
-	.antMatchers("/usuarios/cadastrar").permitAll()
-	.antMatchers("/usuarios/logar").permitAll()
-	.antMatchers(HttpMethod.OPTIONS).permitAll()
-	.anyRequest().authenticated()
-	.and().httpBasic()
-	.and().sessionManagement()
-	.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-	.and().cors()
-	.and().csrf().disable();
-
->>>>>>> c456cdaf6eccf3f79b89c48904823f291bec7629
 	}
 
 	@Override

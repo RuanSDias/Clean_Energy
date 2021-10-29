@@ -67,16 +67,11 @@
 			<artifactId>springfox-boot-starter</artifactId>
 			<version>3.0.0</version>
 		</dependency>
-<<<<<<< HEAD
-=======
-
 
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 		</dependency>
->>>>>>> c456cdaf6eccf3f79b89c48904823f291bec7629
-
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
