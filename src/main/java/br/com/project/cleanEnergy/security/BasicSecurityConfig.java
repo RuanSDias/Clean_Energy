@@ -27,9 +27,9 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-				.antMatchers(HttpMethod.POST, "/api/v1/usuario/salvar").permitAll()
-				.antMatchers(HttpMethod.POST, "/api/v1/usuario/logar").permitAll()
-				.antMatchers(HttpMethod.GET, "/api/v1/usuario").permitAll()
+				.antMatchers(HttpMethod.POST, "/usuarios/salvar").permitAll()
+				.antMatchers(HttpMethod.POST, "/usuarios/logar").permitAll()
+				.antMatchers(HttpMethod.GET, "/usuarios").permitAll()
 				.antMatchers(HttpMethod.GET, "/produtos").permitAll()
 			.anyRequest().authenticated()
 			.and().httpBasic()
