@@ -46,6 +46,7 @@ public class UsuarioModel {
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 	private List<ProdutoModel> produtosUsuarios;
+	private String tipo;
 
 	public UsuarioModel(long idUsuario, String nomeCompleto, String email, String senha) {
 		this.idUsuario = idUsuario;
@@ -104,4 +105,12 @@ public class UsuarioModel {
 		this.produtosUsuarios = produtosUsuarios;
 	}
 
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	
 }
