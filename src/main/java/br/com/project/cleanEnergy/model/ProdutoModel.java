@@ -33,7 +33,7 @@ public class ProdutoModel {
 	private double preco;
 
 	@NotNull
-	private int quantidade;
+	private String descricao;
 
 	@NotNull
 	private String imagem;
@@ -72,12 +72,12 @@ public class ProdutoModel {
 		this.preco = preco;
 	}
 
-	public int getQuantidade() {
-		return quantidade;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 	public String getImagem() {
